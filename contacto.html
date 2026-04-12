@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Lozartico SL</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-icon">❄</span>
+      <span class="nav__logo-text">LOZ<strong>.ARTICO</strong> SL</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html" class="nav__link">Servicios</a>
+      <a href="proyectos.html" class="nav__link">Proyectos</a>
+      <a href="contacto.html" class="nav__link active">Contacto</a>
+    </nav>
+    <a href="contacto.html" class="btn btn--primary nav__cta">Solicitar Presupuesto</a>
+    <button class="nav__burger" id="burger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="index.html" class="nav__mobile-link">Servicios</a>
+    <a href="proyectos.html" class="nav__mobile-link">Proyectos</a>
+    <a href="contacto.html" class="nav__mobile-link">Contacto</a>
+    <a href="contacto.html" class="btn btn--primary" style="margin-top:1.5rem;display:inline-block">Solicitar Presupuesto</a>
+  </div>
+
+  <!-- CONTACT HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="hero__tag reveal">HABLEMOS</span>
+      <h1 class="page-hero__title reveal reveal--delay1">Ingeniería del<br/><em>Clima</em> Excellence.</h1>
+      <p class="page-hero__sub reveal reveal--delay2">Lozartico SL ofrece soluciones avanzadas de climatización y reformas para hogares y negocios en toda España y Europa.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT BODY -->
+  <section class="contact-section">
+    <div class="container contact-grid">
+
+      <!-- Info -->
+      <div class="contact-info reveal">
+        <div class="contact-info__block">
+          <div class="contact-info__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.59-.59a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          </div>
+          <div>
+            <h4>Teléfono de Contacto</h4>
+            <a href="tel:+34910345678">+34 910 345 678</a>
+          </div>
+        </div>
+        <div class="contact-info__block">
+          <div class="contact-info__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Email de Soporte</h4>
+            <a href="mailto:soluciones@lozartico.com">soluciones@lozartico.com</a>
+          </div>
+        </div>
+        <div class="contact-info__block">
+          <div class="contact-info__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Oficina Corporativa</h4>
+            <span>Paseo de la Castellana, 259<br/>28046 Madrid, España</span>
+          </div>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="contact-map">
+          <div class="contact-map__inner">
+            <div class="contact-map__dot"></div>
+            <p>Valencia · Canarias · Ámsterdam · Deyelsdorf</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrap reveal reveal--delay1">
+        <h3>Solicitar una Consulta</h3>
+        <p>Comparte los detalles de tu proyecto y nuestro equipo técnico te responderá con un presupuesto personalizado en 24 horas.</p>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Tu empresa" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="servicio">Tipo de servicio</label>
+            <select id="servicio" name="servicio">
+              <option value="">Selecciona un servicio</option>
+              <option>Climatización (Aire Acondicionado)</option>
+              <option>Climatización (Calefacción)</option>
+              <option>Reforma Integral</option>
+              <option>Mantenimiento Preventivo</option>
+              <option>Auditoría Energética</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Descripción del proyecto</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos brevemente tu proyecto o necesidad..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--full">
+            Enviar Consulta
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <div class="form-success" id="formSuccess">
+            ✅ Mensaje enviado correctamente. Te contactaremos en menos de 24h.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS STRIP -->
+  <section class="trust-strip">
+    <div class="container">
+      <h3 class="reveal">Líderes del sector confían en nosotros.</h3>
+      <div class="trust-logos">
+        <span>STRATO.CONS</span>
+        <span>NORDIC.ENG</span>
+        <span>VORTEX.IND</span>
+        <span>AERO.SYS</span>
+      </div>
+      <blockquote class="trust-quote reveal">
+        <span class="trust-quote__mark">"</span>
+        <p>"Lozartico entregó una solución climática que redujo nuestro gasto operativo un 25% en nuestra planta. Su precisión es inigualable."</p>
+        <cite>— Marcelo V., Director Técnico, Strato Construction</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="nav__logo footer__logo">
+          <span class="nav__logo-icon">❄</span>
+          <span class="nav__logo-text">LOZ<strong>.ARTICO</strong> SL</span>
+        </a>
+        <p>Expertos en climatización, reformas integrales y mantenimiento para hogares y negocios en España y Europa.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <a href="#">Sistemas de Climatización</a>
+        <a href="#">Reformas Integrales</a>
+        <a href="#">Mantenimiento Preventivo</a>
+        <a href="#">Auditoría Energética</a>
+      </div>
+      <div class="footer__col">
+        <h4>Recursos</h4>
+        <a href="#">Guía Técnica</a>
+        <a href="#">Sostenibilidad</a>
+        <a href="proyectos.html">Casos de Éxito</a>
+        <a href="#">Carreras</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos de Servicio</a>
+        <a href="contacto.html">Escríbenos</a>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <span>© 2024 Lozartico SL. Todos los derechos reservados.</span>
+      <div class="footer__socials">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
