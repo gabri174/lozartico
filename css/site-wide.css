@@ -1,0 +1,25 @@
+/* Lozartico — SITE-WIDE DESIGN SYSTEM
+   This file is shared by every HTML page. Keep visual changes here,
+   never in index.html only. */
+:root{--site-navy:#0b3068;--site-navy-dark:#061d42;--site-yellow:#ffd700;--site-cyan:#59d2fe;--site-ink:#10182a;--site-muted:#657085;--site-line:#e6eaf0;--site-bg:#f5f7fa;--site-radius:12px;--site-shadow:0 12px 35px rgba(11,48,104,.09)}
+html{scroll-behavior:smooth}body{background:var(--site-bg);color:var(--site-ink)}
+.container{width:min(1180px,100%);margin-inline:auto;padding-inline:24px}
+.nav{z-index:100;height:70px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--site-line);box-shadow:0 2px 18px rgba(11,48,104,.05)}
+.nav__logo{flex:0 0 auto}.nav__links{gap:4px}.nav__link{font-size:13px;font-weight:600;color:#465166;padding:10px 13px}.nav__link:hover,.nav__link.active{color:var(--site-navy)}.nav__link::after{background:var(--site-yellow);height:3px}.nav__cta{background:var(--site-navy)!important;border-radius:7px!important}
+.nav__mobile{z-index:99}.nav__mobile-link{font-weight:700}
+.btn{border-radius:7px}.btn--primary{background:var(--site-navy)}.btn--yellow{background:var(--site-yellow);color:var(--site-navy)}
+.section-tag{border-radius:4px;font-weight:800;color:var(--site-navy);background:#eaf8fd;border:1px solid #d7f1fb}.section-header{max-width:700px}
+.services,.gallery,.testimonials,.cta{background:#fff}
+.service-card,.project-card,.testimonial,.contact-info__block{border:1px solid var(--site-line);border-radius:var(--site-radius);box-shadow:0 5px 20px rgba(11,48,104,.05);background:#fff}
+.service-card:hover,.project-card:hover{border-color:#cbd7e7;box-shadow:var(--site-shadow)}
+.project-featured{border-radius:var(--site-radius);box-shadow:var(--site-shadow);overflow:hidden}
+.project-card__image{background:#e8edf3}.project-card__image img,.project-featured__image img{display:block;width:100%;height:100%;object-fit:cover}
+.page-hero{background:linear-gradient(120deg,var(--site-navy-dark),var(--site-navy));overflow:hidden}.page-hero__title{color:#fff}.page-hero__title em,.page-hero .hero__tag{color:var(--site-yellow)}
+.projects-section,.contact-section{background:var(--site-bg)}
+.contact-grid{align-items:start}.contact-info__block{transition:transform .2s ease,box-shadow .2s ease}.contact-info__block:hover{transform:translateY(-2px);box-shadow:var(--site-shadow)}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--site-cyan)!important;box-shadow:0 0 0 3px rgba(89,210,254,.12)!important;outline:none}
+.trust-strip{background:#fff;border-top:1px solid var(--site-line);border-bottom:1px solid var(--site-line)}
+.footer{background:var(--site-navy-dark);color:#fff}.footer__col a:hover{color:var(--site-yellow)}
+.gallery__item{border-radius:6px}.gallery__item img,.project-card__image img{transition:transform .45s ease}.gallery__item:hover img,.project-card:hover .project-card__image img{transform:scale(1.04)}
+@media(max-width:900px){.container{padding-inline:20px}.services__grid,.projects-grid,.testimonials__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer__grid{grid-template-columns:1fr 1fr}.contact-grid,.project-featured{grid-template-columns:1fr}}
+@media(max-width:640px){.container{padding-inline:18px}.nav{height:64px;padding-inline:18px}.nav__links,.nav__cta{display:none!important}.nav__logo{width:160px;height:36px}.services__grid,.projects-grid,.testimonials__grid{grid-template-columns:1fr}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:12px;text-align:center}.contact-grid{gap:20px}.project-featured__content{padding:32px 24px}}
