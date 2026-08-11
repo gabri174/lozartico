@@ -1,1 +1,1 @@
-The shared stylesheet entry point is css/style.css. Legacy rules are preserved separately during the migration.
+Site-wide design is now loaded directly through css/style.css on every HTML page. The legacy stylesheet is preserved as css/legacy-style.css; redesign, visual fixes, site-wide rules and final logo overrides are applied after it.
