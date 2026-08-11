@@ -1,5 +1,5 @@
-# Lozartico — deployment/cache safety
-# Evita que el navegador y el servidor mantengan HTML/CSS/JS antiguos.
+# Lozartico — deployment, cache and canonical-domain safety
+# Evita versiones antiguas y normaliza el dominio público .es.
 <IfModule mod_headers.c>
   <FilesMatch "\.(html?|css|js)$">
     Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
@@ -10,4 +10,14 @@
 
 <IfModule mod_expires.c>
   ExpiresActive Off
+</IfModule>
+
+# Si Apache dispone de mod_substitute, corrige referencias antiguas al .com
+# y carga la navegación SEO local en todas las páginas HTML sin duplicar el HTML.
+<IfModule mod_filter.c>
+  AddOutputFilterByType SUBSTITUTE text/html
+</IfModule>
+<IfModule mod_substitute.c>
+  Substitute "s|https://lozartico\.com|https://lozartic\.es|ni"
+  Substitute "s|</body>|<script src=\"/js/seo-links.js\" defer></script></body>|ni"
 </IfModule>
