@@ -1,17 +1,41 @@
 /* ════════════════════════════════════════════════
-   Lozartico SL — interactions + shared visual system
+   Lozartico SL — shared interactions + visual loader
+   Versioned assets: 2026-08-11-LOGO-FIX
    ════════════════════════════════════════════════ */
 
-// Load visual corrections and the new shared redesign after the main stylesheet.
-const visualFixes = document.createElement('link');
-visualFixes.rel = 'stylesheet';
-visualFixes.href = 'css/visual-fixes.css';
-document.head.appendChild(visualFixes);
+// Load the visual layers with a cache-busting version.
+// This is intentionally done from JS because older deployed HTML pages
+// already point to this shared main.js file.
+const ASSET_VERSION = '20260811-logo-fix-2';
 
-const redesign = document.createElement('link');
-redesign.rel = 'stylesheet';
-redesign.href = 'css/redesign.css';
-document.head.appendChild(redesign);
+function loadStylesheet(href) {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = `${href}?v=${ASSET_VERSION}`;
+  document.head.appendChild(link);
+}
+
+loadStylesheet('css/visual-fixes.css');
+loadStylesheet('css/redesign.css');
+
+// ── Official Lozartico logo ────────────────────
+// Use the supplied logo image directly in every page header.
+function applyOfficialLogo() {
+  document.querySelectorAll('.nav__logo').forEach(logo => {
+    const img = document.createElement('img');
+    img.src = `https://i.postimg.cc/7b8n4rBh/logo-lozartico.png?v=${ASSET_VERSION}`;
+    img.alt = 'Lozartico SL';
+    img.width = 220;
+    img.height = 42;
+    img.loading = 'eager';
+    img.decoding = 'async';
+    img.style.cssText = 'display:block;width:220px;height:42px;max-width:none;object-fit:contain;object-position:left center;';
+    logo.innerHTML = '';
+    logo.style.cssText += ';display:flex;align-items:center;width:220px;height:42px;flex:0 0 auto;';
+    logo.appendChild(img);
+  });
+}
+applyOfficialLogo();
 
 // ── NAV scroll ─────────────────────────────────
 const nav = document.getElementById('nav');
@@ -43,6 +67,7 @@ if (burger && mobileMenu) {
     if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
       mobileMenu.classList.remove('open');
       burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
   });
