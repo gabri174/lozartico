@@ -1,1 +1,1 @@
-Site-wide design is now loaded directly through css/style.css on every HTML page. The legacy stylesheet is preserved as css/legacy-style.css; redesign, visual fixes, site-wide rules and final logo overrides are applied after it.
+Site-wide design is loaded directly through css/style.css on every HTML page. css/style.css imports the preserved legacy base first, then visual-fixes.css, redesign.css, site-wide.css and the final logo override layer.
