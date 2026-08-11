@@ -1,5 +1,1 @@
-/* Shared stylesheet entry point. */
-@import url('/css/style.css?v=20260811-global');
-@import url('/css/visual-fixes.css?v=20260811-global');
-@import url('/css/redesign.css?v=20260811-global');
-@import url('/css/site-wide.css?v=20260811-global');
+/* Deprecated: css/style.css is now the site-wide entry point. */
