@@ -1,0 +1,7 @@
+/* Final site-wide visual layer. Loaded by css/style.css on every page. */
+:root{--final-navy:#0b3068;--final-dark:#061d42;--final-yellow:#ffd700;--final-cyan:#59d2fe}
+.nav__logo{width:188px!important;height:40px!important;background:url('https://i.postimg.cc/7b8n4rBh/logo-lozartico.png') center/contain no-repeat!important;display:block!important;flex:0 0 auto!important}
+.nav__logo-icon,.nav__logo-text{display:none!important}
+.footer__logo{background-image:url('https://i.postimg.cc/7b8n4rBh/logo-lozartico.png')!important}
+body{background:#f5f7fa!important;color:#10182a}
+@media(max-width:640px){.nav__logo{width:160px!important;height:36px!important}}
