@@ -1,0 +1,13 @@
+# Lozartico — deployment/cache safety
+# Evita que el navegador y el servidor mantengan HTML/CSS/JS antiguos.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html?|css|js)$">
+    Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive Off
+</IfModule>
