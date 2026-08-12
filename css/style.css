@@ -1,7 +1,1 @@
-/* LOZARTICO — SITE-WIDE DESIGN ENTRY POINT
-   Every HTML page loads this file. The complete visual system is shared here.
-   The previous stylesheet is intentionally superseded by the redesign layers below. */
-@import url('/css/visual-fixes.css?v=20260811-sitewide');
-@import url('/css/redesign.css?v=20260811-sitewide');
-@import url('/css/site-wide.css?v=20260811-sitewide');
-@import url('/css/zz-final-overrides.css?v=20260811-sitewide');
+/* Deprecated. css/style.css is the site-wide entry point. */
