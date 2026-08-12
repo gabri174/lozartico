@@ -11,98 +11,37 @@
   --lz-shadow: 0 24px 70px rgba(7, 27, 53, .14);
   --lz-radius: 20px;
 }
-
 html { scroll-behavior: smooth; }
-body {
-  background: var(--lz-cream) !important;
-  color: var(--lz-ink) !important;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  overflow-x: hidden;
-}
-body::before {
-  content: "";
-  position: fixed;
-  z-index: -1;
-  width: 38rem;
-  height: 38rem;
-  right: -18rem;
-  top: 18vh;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(217,173,82,.18), transparent 68%);
-  pointer-events: none;
-  animation: lz-drift 14s ease-in-out infinite alternate;
-}
-
+body { background: var(--lz-cream) !important; color: var(--lz-ink) !important; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important; overflow-x: hidden; }
+body::before { content: ""; position: fixed; z-index: -1; width: 38rem; height: 38rem; right: -18rem; top: 18vh; border-radius: 50%; background: radial-gradient(circle, rgba(217,173,82,.18), transparent 68%); pointer-events: none; animation: lz-drift 14s ease-in-out infinite alternate; }
 *, *::before, *::after { box-sizing: border-box; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--lz-navy) !important; text-underline-offset: 3px; transition: color .25s ease, opacity .25s ease; }
 a:hover { color: #9b7220 !important; }
-button, .btn, a[class*="btn"], a[class*="button"] {
-  border: 0 !important;
-  border-radius: 999px !important;
-  background: linear-gradient(135deg, var(--lz-gold-light), var(--lz-gold)) !important;
-  color: var(--lz-navy) !important;
-  box-shadow: 0 12px 28px rgba(181, 134, 39, .25) !important;
-  font-weight: 800 !important;
-  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease !important;
-}
+button, .btn, a[class*="btn"], a[class*="button"] { border: 0 !important; border-radius: 999px !important; background: linear-gradient(135deg, var(--lz-gold-light), var(--lz-gold)) !important; color: var(--lz-navy) !important; box-shadow: 0 12px 28px rgba(181, 134, 39, .25) !important; font-weight: 800 !important; transition: transform .25s ease, box-shadow .25s ease, filter .25s ease !important; }
 button:hover, .btn:hover, a[class*="btn"]:hover, a[class*="button"]:hover { transform: translateY(-3px); filter: saturate(1.08); box-shadow: 0 18px 36px rgba(181,134,39,.34) !important; }
-
-header, nav, .navbar, .site-header {
-  background: rgba(255,255,255,.88) !important;
-  color: var(--lz-navy) !important;
-  border-bottom: 1px solid var(--lz-line) !important;
-  box-shadow: 0 8px 30px rgba(7,27,53,.06) !important;
-  backdrop-filter: blur(18px);
-}
+header, nav, .navbar, .site-header { background: rgba(255,255,255,.93) !important; color: var(--lz-navy) !important; border-bottom: 1px solid var(--lz-line) !important; box-shadow: 0 8px 30px rgba(7,27,53,.06) !important; backdrop-filter: blur(18px); position: relative; }
+header::before, nav::before, .navbar::before, .site-header::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,.96), rgba(255,255,255,.82)); z-index: -1; }
 header a, nav a, .navbar a, .site-header a { color: var(--lz-navy) !important; font-weight: 700; }
-
-.hero, .hero-section, .hero-home, .inicio, section:first-of-type {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: linear-gradient(90deg, rgba(7,27,53,.96) 0%, rgba(7,27,53,.83) 48%, rgba(7,27,53,.42) 100%), url('../images/aire_acondicionado_montaje_mantenimiento_lozartico.jpeg') center/cover !important;
-  color: var(--lz-white) !important;
-}
-.hero::after, .hero-section::after, .hero-home::after, .inicio::after {
-  content: "";
-  position: absolute;
-  width: 18rem;
-  height: 18rem;
-  right: 8%;
-  bottom: -8rem;
-  border: 1px solid rgba(244,213,138,.42);
-  border-radius: 42% 58% 60% 40%;
-  transform: rotate(22deg);
-  animation: lz-float 8s ease-in-out infinite;
-  pointer-events: none;
-}
+header img, nav img, .navbar img, .site-header img { max-height: 58px !important; width: auto !important; object-fit: contain !important; display: block !important; filter: drop-shadow(0 4px 12px rgba(7,27,53,.08)); }
+header picture, nav picture, .navbar picture, .site-header picture { display: block !important; }
+header .logo, nav .logo, .navbar .logo, .site-header .logo, header .custom-logo, nav .custom-logo, .navbar .custom-logo, .site-header .custom-logo { display: inline-flex !important; align-items: center; gap: .65rem; }
+.hero, .hero-section, .hero-home, .inicio, section:first-of-type { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(90deg, rgba(7,27,53,.96) 0%, rgba(7,27,53,.83) 48%, rgba(7,27,53,.42) 100%), url('../images/aire_acondicionado_montaje_mantenimiento_lozartico.jpeg') center/cover !important; color: var(--lz-white) !important; }
+.hero::after, .hero-section::after, .hero-home::after, .inicio::after { content: ""; position: absolute; width: 18rem; height: 18rem; right: 8%; bottom: -8rem; border: 1px solid rgba(244,213,138,.42); border-radius: 42% 58% 60% 40%; transform: rotate(22deg); animation: lz-float 8s ease-in-out infinite; pointer-events: none; }
 .hero h1, .hero-section h1, .hero-home h1, .inicio h1 { color: var(--lz-white) !important; letter-spacing: -.045em; line-height: .98; }
 .hero h1 em, .hero h1 span, .hero-section h1 em, .hero-home h1 em { color: var(--lz-gold-light) !important; }
 .hero p, .hero-section p, .hero-home p, .inicio p { color: rgba(255,255,255,.82) !important; }
-
-section:not(.hero):not(.hero-section):not(.hero-home):not(.inicio), main > section {
-  position: relative;
-  padding-top: clamp(4rem, 8vw, 8rem);
-  padding-bottom: clamp(4rem, 8vw, 8rem);
-}
+section:not(.hero):not(.hero-section):not(.hero-home):not(.inicio), main > section { position: relative; padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); }
 h1, h2, h3, h4 { color: var(--lz-navy) !important; letter-spacing: -.025em; }
 h2::after, .section-title::after { content: ""; display: block; width: 3.5rem; height: 3px; margin-top: .8rem; border-radius: 5px; background: var(--lz-gold); }
-.card, .service-card, .project-card, .feature-card, .contact-card, article {
-  background: rgba(255,255,255,.9) !important;
-  border: 1px solid rgba(11,23,39,.08) !important;
-  border-radius: var(--lz-radius) !important;
-  box-shadow: var(--lz-shadow) !important;
-  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease !important;
-}
+.card, .service-card, .project-card, .feature-card, .contact-card, article, .review, .testimonial, .quote { background: rgba(255,255,255,.94) !important; border: 1px solid rgba(11,23,39,.08) !important; border-radius: var(--lz-radius) !important; box-shadow: var(--lz-shadow) !important; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease !important; }
 .card:hover, .service-card:hover, .project-card:hover, .feature-card:hover, .contact-card:hover, article:hover { transform: translateY(-8px); border-color: rgba(217,173,82,.55) !important; box-shadow: 0 30px 80px rgba(7,27,53,.2) !important; }
-
+.review, .testimonial, .quote { color: var(--lz-ink) !important; opacity: 1 !important; visibility: visible !important; }
+.review *, .testimonial *, .quote * { color: inherit !important; opacity: 1 !important; visibility: visible !important; }
 input, select, textarea { width: 100%; border: 1px solid rgba(11,23,39,.16) !important; border-radius: 12px !important; background: #fff !important; color: var(--lz-ink) !important; padding: .85rem 1rem !important; outline: none; transition: border-color .2s, box-shadow .2s; }
 input:focus, select:focus, textarea:focus { border-color: var(--lz-gold) !important; box-shadow: 0 0 0 4px rgba(217,173,82,.16) !important; }
-
 footer, .site-footer { background: var(--lz-navy) !important; color: rgba(255,255,255,.72) !important; }
 footer h2, footer h3, footer h4, .site-footer h2, .site-footer h3, .site-footer h4, footer a, .site-footer a { color: var(--lz-white) !important; }
-
 @keyframes lz-drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-35px,25px,0) scale(1.08); } }
 @keyframes lz-float { 0%,100% { transform: translateY(0) rotate(22deg); } 50% { transform: translateY(-18px) rotate(28deg); } }
 @media (max-width: 760px) { .hero, .hero-section, .hero-home, .inicio { background-position: 65% center !important; } .hero h1, .hero-section h1, .hero-home h1, .inicio h1 { font-size: clamp(2.5rem, 12vw, 4.5rem) !important; } }
