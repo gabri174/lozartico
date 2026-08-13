@@ -1,0 +1,39 @@
+/* LOZARTICO - correcciones finales */
+
+:root { --header-height: 88px; }
+.nav { min-width: 0; padding: 0 clamp(1rem, 3vw, 2rem) !important; min-height: var(--header-height); }
+.nav__logo { display: inline-flex !important; align-items: center !important; gap: .7rem !important; flex: 0 0 auto !important; min-width: 0 !important; max-width: 240px; overflow: hidden; }
+.nav__logo::before, .nav__logo::after { content: none !important; }
+.nav__logo-icon, .nav__logo-text { display: none !important; }
+.nav__logo-img { display: block !important; width: auto !important; height: 40px !important; max-width: 210px !important; object-fit: contain !important; }
+.footer__logo { display: inline-flex !important; align-items: center !important; gap: .6rem !important; text-decoration: none !important; }
+.footer__logo .nav__logo-img { height: 44px !important; max-width: 240px !important; }
+.nav__links { display: flex !important; align-items: center !important; justify-content: center !important; gap: .1rem !important; flex: 1 1 auto !important; min-width: 0 !important; flex-wrap: nowrap !important; }
+.nav__link { white-space: nowrap !important; padding: .6rem .7rem !important; font-size: .84rem !important; line-height: 1 !important; }
+.nav__cta { flex: 0 0 auto !important; white-space: nowrap !important; }
+.nav__mobile-link.active { color: var(--primary) !important; font-weight: 800 !important; }
+.hero, .page-hero, .waterproof-page, main { scroll-margin-top: var(--header-height); }
+body { overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
+.hero__title, .page-hero__title, .waterproof-hero h1, h1, h2, h3, .section-header h2, .section-tag, .hero__tag { text-wrap: balance; hyphens: auto; }
+.hero__title, .page-hero__title { line-height: .92 !important; letter-spacing: -.05em !important; }
+.hero__sub, .page-hero__sub, .waterproof-hero p, .service-card p, .testimonial p, .trust-quote p, .waterproof-card p, .project-terrace-feature__content p { line-height: 1.8 !important; }
+.terrace-feature { position: relative; padding: clamp(4rem, 8vw, 6rem) 0; overflow: hidden; background: var(--off-white); }
+.terrace-feature__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.terrace-feature__image { position: relative; min-height: 360px; overflow: hidden; border-radius: 26px; box-shadow: var(--shadow-lg); }
+.terrace-feature__image img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; display: block; }
+.terrace-feature__content { max-width: 620px; }
+.terrace-feature__content h2 em { display: block; color: var(--cyan); font-style: normal; }
+.terrace-feature__content p { max-width: 580px; }
+.project-terrace-feature { padding: clamp(4rem, 8vw, 6rem) 0; background: #f7f8fb; }
+.project-terrace-feature__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.project-terrace-feature__image { border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); }
+.project-terrace-feature__image img { width: 100%; min-height: 340px; object-fit: cover; display: block; }
+.project-terrace-feature__content h2 { margin: .8rem 0 1rem; }
+.project-terrace-feature__content p { max-width: 560px; color: var(--neutral); }
+@media (max-width: 1180px) { .nav__logo { max-width: 190px; } .nav__link { padding: .55rem .45rem !important; font-size: .78rem !important; } }
+@media (max-width: 980px) { .nav__links { gap: .02rem !important; } .nav__cta { font-size: .78rem !important; padding: .78rem 1rem !important; } }
+@media (max-width: 860px) { .terrace-feature__grid, .project-terrace-feature__grid, .waterproof-grid { grid-template-columns: 1fr !important; } .terrace-feature__image, .project-terrace-feature__image, .terrace-feature__image img, .project-terrace-feature__image img { min-height: 280px; } }
+@media (max-width: 760px) { .nav__links, .nav__cta { display: none !important; } .nav__logo { max-width: 180px; } .nav__logo-img, .footer__logo .nav__logo-img { height: 34px !important; max-width: 180px !important; } .hero__title, .page-hero__title, .waterproof-hero h1 { font-size: clamp(2.2rem, 10vw, 4rem) !important; line-height: .94 !important; } .hero__sub, .page-hero__sub, .waterproof-hero p { font-size: .98rem !important; } }
+@media (max-width: 520px) { .nav { padding-left: .85rem !important; padding-right: .85rem !important; } .nav__logo { max-width: 145px; } .nav__logo-img, .footer__logo .nav__logo-img { height: 28px !important; max-width: 145px !important; } .hero__actions, .cta__actions { flex-direction: column; align-items: stretch; } .btn, .btn--lg { width: 100%; justify-content: center; } }
+.nav__logo-img[src="https://i.postimg.cc/7b8n4rBh/logo-lozartico.png"], .footer__logo .nav__logo-img[src="https://i.postimg.cc/7b8n4rBh/logo-lozartico.png"] { image-rendering: -webkit-optimize-contrast; }
