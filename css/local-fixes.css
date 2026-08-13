@@ -1,0 +1,430 @@
+/* LOZARTICO - correcciones locales */
+.nav {
+  isolation: isolate;
+  background: rgba(255, 255, 255, .97) !important;
+  overflow: visible;
+}
+
+.nav::before,
+.nav::after {
+  content: none !important;
+}
+
+.nav__logo {
+  position: relative;
+  z-index: 2;
+  display: inline-flex !important;
+  align-items: center;
+  gap: .65rem;
+  min-width: max-content;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+
+.nav__logo-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  color: #0b3068 !important;
+  font-size: 1.15rem !important;
+  line-height: 1;
+}
+
+.nav__logo-text {
+  display: inline-block !important;
+  color: #0b3068 !important;
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .02em;
+  line-height: 1;
+}
+
+.nav__logo-text strong {
+  color: #2bb8e8 !important;
+}
+
+.footer__logo .nav__logo-icon {
+  color: #59d2fe !important;
+}
+
+.footer__logo .nav__logo-text,
+.footer__logo .nav__logo-text strong {
+  color: #fff !important;
+}
+
+/* Las reseñas de contacto deben ser visibles aunque falle reveal.js */
+.contact-page .trust-strip .reveal,
+.trust-strip .reveal {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.trust-strip {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.trust-quote {
+  color: #0b3068 !important;
+  background: #f7f8fb;
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.trust-quote p,
+.trust-quote cite {
+  color: #44474e !important;
+  opacity: 1 !important;
+}
+
+/* Tarjeta del nuevo servicio */
+.terrace-service {
+  margin-top: 3rem;
+}
+
+.terrace-service__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(6, 29, 66, .95), rgba(11, 48, 104, .8)),
+    url('../images/patio_reformado_espana_lozartico.jpg') center / cover;
+  color: #fff;
+  box-shadow: 0 24px 80px rgba(11, 48, 104, .2);
+}
+
+.terrace-service h2,
+.terrace-service p {
+  color: #fff !important;
+}
+
+.terrace-service p {
+  max-width: 650px;
+  opacity: .82;
+}
+
+.terrace-service__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: .9rem 1.25rem;
+  border-radius: 999px;
+  background: #ffd700;
+  color: #0b3068 !important;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .terrace-service__inner {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.25rem;
+  }
+
+  .nav__logo-text {
+    font-size: .88rem !important;
+  }
+}
+
+
+/* =========================================================
+   LOZARTICO - LOGO DEL NAV Y SECCIÓN DE TERRAZAS
+   ========================================================= */
+
+.nav__logo {
+  position: relative;
+  z-index: 5;
+  display: inline-flex !important;
+  align-items: center;
+  gap: .65rem;
+  min-width: max-content;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+
+.nav__logo-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  color: #0b3068 !important;
+  font-size: 1.2rem !important;
+  line-height: 1;
+}
+
+.nav__logo-text {
+  display: inline-block !important;
+  color: #0b3068 !important;
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .02em;
+  line-height: 1;
+}
+
+.nav__logo-text strong {
+  color: #2bb8e8 !important;
+}
+
+.nav__logo:hover .nav__logo-text,
+.nav__logo:hover .nav__logo-text strong {
+  color: #0b3068 !important;
+}
+
+.footer__logo .nav__logo-icon {
+  color: #59d2fe !important;
+}
+
+.footer__logo .nav__logo-text,
+.footer__logo .nav__logo-text strong {
+  color: #fff !important;
+}
+
+/* La sección permanece visible aunque falle la animación reveal */
+.terrace-feature {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+  background: #f7f8fb;
+}
+
+.terrace-feature__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.terrace-feature__image {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #0b3068;
+  box-shadow: 0 24px 70px rgba(11, 48, 104, .2);
+}
+
+.terrace-feature__image img {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+  transition: transform .7s ease;
+}
+
+.terrace-feature__image:hover img {
+  transform: scale(1.04);
+}
+
+.terrace-feature__badge {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  padding: .55rem .9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .92);
+  color: #0b3068;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.terrace-feature__content {
+  max-width: 620px;
+}
+
+.terrace-feature__content h2 {
+  margin: 0 0 1.25rem;
+  color: #0b3068;
+}
+
+.terrace-feature__content h2 em {
+  display: block;
+  color: #2bb8e8;
+  font-style: normal;
+}
+
+.terrace-feature__content p {
+  max-width: 580px;
+  color: #44474e;
+  line-height: 1.8;
+}
+
+.terrace-feature__content .btn {
+  margin-top: 1rem;
+}
+
+@media (max-width: 800px) {
+  .terrace-feature {
+    padding: 4rem 0;
+  }
+
+  .terrace-feature__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .terrace-feature__image,
+  .terrace-feature__image img {
+    min-height: 300px;
+  }
+
+  .nav__logo-text {
+    font-size: .86rem !important;
+  }
+}
+
+/* Navegación uniforme en todas las páginas */
+.nav {
+  min-width: 0;
+  padding-left: clamp(1rem, 3vw, 2rem) !important;
+  padding-right: clamp(1rem, 3vw, 2rem) !important;
+}
+
+.nav__logo {
+  flex: 0 0 auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .55rem !important;
+  min-width: 190px !important;
+  color: #0b3068 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.nav__logo-icon {
+  display: inline-flex !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #0b3068 !important;
+  font-size: 1.25rem !important;
+  opacity: 1 !important;
+}
+
+.nav__logo-text,
+.nav__logo-text strong {
+  display: inline-block !important;
+  color: #0b3068 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  white-space: nowrap !important;
+}
+
+.nav__logo-text {
+  font-family: 'Syne', sans-serif !important;
+  font-size: .95rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .02em !important;
+}
+
+.nav__logo-text strong {
+  color: #2bb8e8 !important;
+}
+
+.nav__links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: .1rem !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.nav__link {
+  white-space: nowrap !important;
+  padding-left: .65rem !important;
+  padding-right: .65rem !important;
+  font-size: .82rem !important;
+}
+
+.nav__cta {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+.nav__mobile-link.active {
+  color: var(--primary) !important;
+  font-weight: 800 !important;
+}
+
+.project-terrace-feature {
+  padding: 5rem 0;
+  background: var(--off-white);
+}
+
+.project-terrace-feature__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.project-terrace-feature__image {
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.project-terrace-feature__image img {
+  width: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.project-terrace-feature__content h2 {
+  margin: .8rem 0 1rem;
+}
+
+.project-terrace-feature__content p {
+  max-width: 560px;
+  color: var(--neutral);
+  line-height: 1.8;
+}
+
+@media (max-width: 1050px) {
+  .nav__logo {
+    min-width: 160px !important;
+  }
+
+  .nav__link {
+    padding-left: .42rem !important;
+    padding-right: .42rem !important;
+    font-size: .76rem !important;
+  }
+
+  .nav__cta {
+    padding-left: .8rem !important;
+    padding-right: .8rem !important;
+    font-size: .75rem !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .nav__links,
+  .nav__cta {
+    display: none !important;
+  }
+
+  .nav__logo {
+    min-width: 0 !important;
+  }
+
+  .project-terrace-feature__grid {
+    grid-template-columns: 1fr;
+  }
+}
