@@ -21,5 +21,16 @@ html{scroll-behavior:smooth}body{background:var(--site-bg);color:var(--site-ink)
 .trust-strip{background:#fff;border-top:1px solid var(--site-line);border-bottom:1px solid var(--site-line)}
 .footer{background:var(--site-navy-dark);color:#fff}.footer__col a:hover{color:var(--site-yellow)}
 .gallery__item{border-radius:6px}.gallery__item img,.project-card__image img{transition:transform .45s ease}.gallery__item:hover img,.project-card:hover .project-card__image img{transform:scale(1.04)}
+
+/* Restauración de identidad de marca: logo oficial en nav y footer. */
+.nav__logo{width:220px!important;height:42px!important;background:url('https://i.postimg.cc/7b8n4rBh/logo-lozartico.png') center/contain no-repeat!important;display:flex!important;align-items:center!important;flex:0 0 auto!important}
+.nav__logo-icon,.nav__logo-text{display:none!important}
+.footer__logo{background-image:url('https://i.postimg.cc/7b8n4rBh/logo-lozartico.png')!important}
+
+/* Bloque de servicio de terrazas / impermeabilización. */
+.terrace-highlight{position:relative;overflow:hidden;background:linear-gradient(110deg,rgba(7,27,53,.98),rgba(13,41,72,.92))!important;color:#fff}
+.terrace-highlight::after{content:'';position:absolute;width:28rem;height:28rem;right:-10rem;top:-12rem;border-radius:50%;background:radial-gradient(circle,rgba(244,213,138,.22),transparent 68%);pointer-events:none}
+.terrace-highlight h2,.terrace-highlight h3{color:#fff!important}.terrace-highlight p{color:rgba(255,255,255,.82)}.terrace-highlight .section-tag{color:#f4d58a}
+.terrace-highlight .terrace-card{position:relative;z-index:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:1.5rem;backdrop-filter:blur(12px)}
 @media(max-width:900px){.container{padding-inline:20px}.services__grid,.projects-grid,.testimonials__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer__grid{grid-template-columns:1fr 1fr}.contact-grid,.project-featured{grid-template-columns:1fr}}
-@media(max-width:640px){.container{padding-inline:18px}.nav{height:64px;padding-inline:18px}.nav__links,.nav__cta{display:none!important}.nav__logo{width:160px;height:36px}.services__grid,.projects-grid,.testimonials__grid{grid-template-columns:1fr}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:12px;text-align:center}.contact-grid{gap:20px}.project-featured__content{padding:32px 24px}}
+@media(max-width:640px){.container{padding-inline:18px}.nav{height:64px;padding-inline:18px}.nav__links,.nav__cta{display:none!important}.nav__logo{width:170px!important;height:36px!important}.services__grid,.projects-grid,.testimonials__grid{grid-template-columns:1fr}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:12px;text-align:center}.contact-grid{gap:20px}.project-featured__content{padding:32px 24px}}
