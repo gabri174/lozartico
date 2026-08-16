@@ -3,7 +3,7 @@
    Versioned assets: 2026-08-11-SITE-WIDE-DESIGN
    ════════════════════════════════════════════════ */
 
-const ASSET_VERSION = '20260811-site-wide-4';
+const ASSET_VERSION = '20260816-nav-fix-1';
 
 function loadStylesheet(path) {
   const link = document.createElement('link');
@@ -30,24 +30,64 @@ function applyOfficialLogo() {
 }
 applyOfficialLogo();
 
-// Ensure the terrace service is visible in the shared navigation/footer on every page.
-function ensureTerraceLinks() {
-  document.querySelectorAll('.nav__links, .nav__mobile').forEach(menu => {
-    if (!menu.querySelector('a[href="terrazas.html"]')) {
-      const a = document.createElement('a');
-      a.href = 'terrazas.html'; a.textContent = 'Terrazas';
-      a.className = menu.classList.contains('nav__mobile') ? 'nav__mobile-link' : 'nav__link';
-      menu.appendChild(a);
-    }
+// ── Shared navigation repair ───────────────────
+// Older deployed templates do not always contain the current nav structure.
+// Normalize it here so every page gets the same functional navigation.
+function ensureGlobalNavigation() {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+
+  const items = [
+    ['Servicios', 'servicios-locales.html'],
+    ['Terrazas', 'terrazas.html'],
+    ['Proyectos', 'proyectos.html'],
+    ['Contacto', 'contacto.html']
+  ];
+
+  let desktop = nav.querySelector('.nav__links');
+  if (!desktop) {
+    desktop = document.createElement('nav');
+    desktop.className = 'nav__links';
+    const burger = nav.querySelector('#burger');
+    nav.insertBefore(desktop, burger || null);
+  }
+
+  // Replace stale/partial nav links with the canonical four.
+  desktop.innerHTML = '';
+  items.forEach(([label, href]) => {
+    const a = document.createElement('a');
+    a.href = href;
+    a.className = 'nav__link';
+    a.textContent = label;
+    desktop.appendChild(a);
   });
-  document.querySelectorAll('.footer__col').forEach(col => {
-    const heading = col.querySelector('h4');
-    if (heading && heading.textContent.trim().toLowerCase() === 'servicios' && !col.querySelector('a[href="terrazas.html"]')) {
-      const a = document.createElement('a'); a.href = 'terrazas.html'; a.textContent = 'Impermeabilización de Terrazas'; col.appendChild(a);
-    }
+
+  let cta = nav.querySelector('.nav__cta');
+  if (!cta) {
+    cta = document.createElement('a');
+    cta.className = 'btn btn--primary nav__cta';
+    nav.insertBefore(cta, nav.querySelector('#burger') || null);
+  }
+  cta.href = 'contacto.html';
+  cta.textContent = 'Presupuesto Gratis';
+
+  let mobile = document.getElementById('mobileMenu');
+  if (!mobile) {
+    mobile = document.createElement('div');
+    mobile.id = 'mobileMenu';
+    mobile.className = 'nav__mobile';
+    document.body.insertBefore(mobile, document.body.firstChild);
+  }
+  mobile.innerHTML = '';
+  items.forEach(([label, href]) => {
+    const a = document.createElement('a');
+    a.href = href;
+    a.className = 'nav__mobile-link';
+    a.textContent = label;
+    mobile.appendChild(a);
   });
 }
-ensureTerraceLinks();
+ensureGlobalNavigation();
 
 const nav = document.getElementById('nav');
 if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
@@ -128,5 +168,5 @@ if(contactForm){
 const currentPage=window.location.pathname.split('/').pop()||'index.html';
 document.querySelectorAll('.nav__link').forEach(link=>{const href=link.getAttribute('href');if(href===currentPage||(currentPage===''&&href==='index.html'))link.classList.add('active');});
 
-const wa=document.createElement('a');wa.href='https://wa.me/34634332565?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto';wa.target='_blank';wa.rel='noopener';wa.setAttribute('aria-label','WhatsApp Lozartico');wa.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471.15-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.198.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
+const wa=document.createElement('a');wa.href='https://wa.me/34634332565?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto';wa.target='_blank';wa.rel='noopener';wa.setAttribute('aria-label','WhatsApp Lozartico');wa.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471.15-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458-.13-.606.134-.133.298-.347.446-.52.149-.198.198-.371.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
 wa.style.cssText='position:fixed;right:22px;bottom:22px;z-index:200;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,.3);transition:transform .2s ease';wa.addEventListener('mouseenter',()=>wa.style.transform='scale(1.08)');wa.addEventListener('mouseleave',()=>wa.style.transform='');document.body.appendChild(wa);
