@@ -1,6 +1,4 @@
-/* Lozartico — SITE-WIDE DESIGN SYSTEM
-   This file is shared by every HTML page. Keep visual changes here,
-   never in index.html only. */
+/* Lozartico — SITE-WIDE DESIGN SYSTEM */
 :root{--site-navy:#0b3068;--site-navy-dark:#061d42;--site-yellow:#ffd700;--site-cyan:#59d2fe;--site-ink:#10182a;--site-muted:#657085;--site-line:#e6eaf0;--site-bg:#f5f7fa;--site-radius:12px;--site-shadow:0 12px 35px rgba(11,48,104,.09)}
 html{scroll-behavior:smooth}body{background:var(--site-bg);color:var(--site-ink)}
 .container{width:min(1180px,100%);margin-inline:auto;padding-inline:24px}
@@ -21,16 +19,9 @@ html{scroll-behavior:smooth}body{background:var(--site-bg);color:var(--site-ink)
 .trust-strip{background:#fff;border-top:1px solid var(--site-line);border-bottom:1px solid var(--site-line)}
 .footer{background:var(--site-navy-dark);color:#fff}.footer__col a:hover{color:var(--site-yellow)}
 .gallery__item{border-radius:6px}.gallery__item img,.project-card__image img{transition:transform .45s ease}.gallery__item:hover img,.project-card:hover .project-card__image img{transform:scale(1.04)}
-
-/* Restauración de identidad de marca: logo oficial en nav y footer. */
-.nav__logo{width:220px!important;height:42px!important;background:url('https://i.postimg.cc/7b8n4rBh/logo-lozartico.png') center/contain no-repeat!important;display:flex!important;align-items:center!important;flex:0 0 auto!important}
-.nav__logo-icon,.nav__logo-text{display:none!important}
-.footer__logo{background-image:url('https://i.postimg.cc/7b8n4rBh/logo-lozartico.png')!important}
-
-/* Bloque de servicio de terrazas / impermeabilización. */
-.terrace-highlight{position:relative;overflow:hidden;background:linear-gradient(110deg,rgba(7,27,53,.98),rgba(13,41,72,.92))!important;color:#fff}
-.terrace-highlight::after{content:'';position:absolute;width:28rem;height:28rem;right:-10rem;top:-12rem;border-radius:50%;background:radial-gradient(circle,rgba(244,213,138,.22),transparent 68%);pointer-events:none}
-.terrace-highlight h2,.terrace-highlight h3{color:#fff!important}.terrace-highlight p{color:rgba(255,255,255,.82)}.terrace-highlight .section-tag{color:#f4d58a}
-.terrace-highlight .terrace-card{position:relative;z-index:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:1.5rem;backdrop-filter:blur(12px)}
-@media(max-width:900px){.container{padding-inline:20px}.services__grid,.projects-grid,.testimonials__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer__grid{grid-template-columns:1fr 1fr}.contact-grid,.project-featured{grid-template-columns:1fr}}
-@media(max-width:640px){.container{padding-inline:18px}.nav{height:64px;padding-inline:18px}.nav__links,.nav__cta{display:none!important}.nav__logo{width:170px!important;height:36px!important}.services__grid,.projects-grid,.testimonials__grid{grid-template-columns:1fr}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:12px;text-align:center}.contact-grid{gap:20px}.project-featured__content{padding:32px 24px}}
+.nav__logo{width:220px!important;height:42px!important;background:none!important;display:flex!important;align-items:center!important;flex:0 0 auto!important}
+.nav__logo-icon,.nav__logo-text{display:none!important}.footer__logo{background:none!important}
+.terrace-highlight{position:relative;overflow:hidden;background:linear-gradient(110deg,rgba(7,27,53,.98),rgba(13,41,72,.92))!important;color:#fff}.terrace-highlight::after{content:'';position:absolute;width:28rem;height:28rem;right:-10rem;top:-12rem;border-radius:50%;background:radial-gradient(circle,rgba(244,213,138,.22),transparent 68%);pointer-events:none}.terrace-highlight h2,.terrace-highlight h3{color:#fff!important}.terrace-highlight p{color:rgba(255,255,255,.82)}.terrace-highlight .section-tag{color:#f4d58a}.terrace-highlight .terrace-card{position:relative;z-index:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:1.5rem;backdrop-filter:blur(12px)}
+@media(max-width:900px){.container{padding-inline:20px}.services__grid,.projects-grid,.testimonials__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer__grid{grid-template-columns:1fr 1fr}.contact-grid,.project-featured{grid-template-columns:1fr}.hero{height:auto;min-height:680px}.hero__content{padding:72px 20px 52px}.hero__photo-bg{width:100%;opacity:.28}.hero__overlay{background:linear-gradient(180deg,rgba(6,29,66,.96),rgba(6,29,66,.84))}}
+@media(max-width:640px){.container{padding-inline:18px}.nav{height:64px;padding-inline:14px}.nav__links,.nav__cta{display:none!important}.nav__logo{width:170px!important;height:36px!important}.hero{min-height:0;padding-top:64px}.hero__content{padding:58px 18px 46px}.hero__tag{max-width:100%;font-size:9px}.hero__title{font-size:clamp(42px,13vw,62px);line-height:.94;max-width:100%;letter-spacing:-.045em;margin-bottom:18px}.hero__sub{font-size:13px;line-height:1.65;max-width:100%;margin-bottom:20px}.hero__actions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}.hero__badges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:12px}.hero__badge-num{font-size:18px}.hero__badge-label{font-size:8px}.services__grid,.projects-grid,.testimonials__grid{grid-template-columns:1fr}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:12px;text-align:center}.contact-grid{gap:20px}.project-featured__content{padding:32px 24px}.gallery__grid{grid-template-columns:1fr!important;grid-template-rows:repeat(3,220px)!important;padding:0 18px}.gallery__item--tall,.gallery__item--wide{grid-column:auto!important;grid-row:auto!important}}
+@media(max-width:420px){.hero__content{padding-top:48px}.hero__title{font-size:clamp(38px,12.5vw,52px)}.hero__badges{grid-template-columns:1fr 1fr}.hero__actions .btn{width:100%;justify-content:center}.nav__logo{width:155px!important}}
