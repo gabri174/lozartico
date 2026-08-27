@@ -1,6 +1,7 @@
 /* Lozartico SL — shared site runtime */
 /* IMPORTANT: every HTML page loads this file. Keep site-wide behavior here. */
-const ASSET_VERSION = '20260827-sitewide-5';
+const ASSET_VERSION = '20260827-sitewide-6';
+const PRODUCTION_ORIGIN = 'https://lozartic.es';
 
 function loadStylesheet(path) {
   const href = `${path}?v=${ASSET_VERSION}`;
@@ -15,6 +16,21 @@ function loadStylesheet(path) {
 loadStylesheet('/css/visual-fixes.css');
 loadStylesheet('/css/redesign.css');
 loadStylesheet('/css/site-wide.css');
+
+function normalizeProductionUrls() {
+  // The production site is lozartic.es. Keep old .com references from
+  // previous HTML versions from leaking into canonical/OG/Twitter/schema.
+  document.querySelectorAll('link[rel="canonical"], meta[property="og:url"], meta[property="og:image"], meta[name="twitter:image"]').forEach(el => {
+    const attr = el.tagName === 'LINK' ? 'href' : 'content';
+    const value = el.getAttribute(attr);
+    if (value && value.includes('lozartico.com')) el.setAttribute(attr, value.replaceAll('https://lozartico.com', PRODUCTION_ORIGIN));
+  });
+
+  document.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+    if (!script.textContent.includes('lozartico.com')) return;
+    script.textContent = script.textContent.replaceAll('https://lozartico.com', PRODUCTION_ORIGIN);
+  });
+}
 
 function applyOfficialLogo() {
   document.querySelectorAll('.nav__logo').forEach(logo => {
@@ -180,6 +196,7 @@ function initWhatsApp() {
 }
 
 function init() {
+  normalizeProductionUrls();
   applyOfficialLogo();
   ensureGlobalNavigation();
   markCurrentPage();
